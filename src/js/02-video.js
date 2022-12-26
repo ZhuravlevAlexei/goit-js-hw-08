@@ -2,9 +2,6 @@ import Player from '@vimeo/player';
 import throttle from 'lodash.throttle';
 const KEY_VIDEO_STORAGE = 'videoplayer-current-time';
 
-// console.log(Player);
-//console.log(throttle);
-
 const iframe = document.querySelector('iframe');
 const player = new Player(iframe);
 
