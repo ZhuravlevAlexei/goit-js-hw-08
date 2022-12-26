@@ -10,8 +10,8 @@ let StateData = {
   message: '',
 };
 
-feedbackForm.addEventListener('keyup', onInput);
-sbmButton.addEventListener('click', onClick);
+feedbackForm.addEventListener('keyup', onFormInput);
+sbmButton.addEventListener('click', onButtonClick);
 
 function saveStorage() {
   localStorage.setItem(KEY_SUBMIT_STORAGE, JSON.stringify(StateData));
@@ -19,7 +19,7 @@ function saveStorage() {
 
 const throttledSaveStorage = throttle(saveStorage, 500);
 
-function onClick(evt) {
+function onButtonClick(evt) {
   evt.preventDefault();
   inputEmail.value = '';
   inputMessage.value = '';
@@ -27,7 +27,7 @@ function onClick(evt) {
   localStorage.removeItem(KEY_SUBMIT_STORAGE);
 }
 
-function onInput(evt) {
+function onFormInput(evt) {
   if (evt.target.name === 'email') {
     StateData.email = evt.target.value;
   }
