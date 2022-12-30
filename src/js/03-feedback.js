@@ -17,6 +17,11 @@ function saveStorage() {
 const throttledSaveStorage = throttle(saveStorage, 500);
 
 function onFormSubmit(evt) {
+  if (!inputMessage.value || !inputEmail.value) {
+    alert('Заповніть всі поля форми!');
+    return;
+  }
+
   // console.log(evt);
   evt.preventDefault();
   inputEmail.value = '';
