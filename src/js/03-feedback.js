@@ -17,6 +17,8 @@ function saveStorage() {
 const throttledSaveStorage = throttle(saveStorage, 500);
 
 function onFormSubmit(evt) {
+  console.log(inputMessage.value);
+  console.log(inputEmail.value);
   if (!inputMessage.value || !inputEmail.value) {
     alert('Заповніть всі поля форми!');
     return;
