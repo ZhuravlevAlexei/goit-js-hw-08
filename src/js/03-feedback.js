@@ -17,15 +17,14 @@ function saveStorage() {
 const throttledSaveStorage = throttle(saveStorage, 500);
 
 function onFormSubmit(evt) {
-  console.log(inputMessage.value);
-  console.log(inputEmail.value);
+  // console.log(evt);
+  evt.preventDefault();
+
   if (!inputMessage.value || !inputEmail.value) {
     alert('Заповніть всі поля форми!');
     return;
   }
 
-  // console.log(evt);
-  evt.preventDefault();
   inputEmail.value = '';
   inputMessage.value = '';
   console.log(StateData);
